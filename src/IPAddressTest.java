@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StringCheckingTest {
+class IPAddressTest {
 
     @Test
     void isIP1() {
@@ -124,4 +124,5 @@ class StringCheckingTest {
         StringChecking ip = new StringChecking("255..255.255.255");
         Assertions.assertFalse(ip.isIP());
     }
+
 }
