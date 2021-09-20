@@ -22,11 +22,17 @@ public class StringChecking {
     }
 
     public boolean isURL() {
-        return true;
+        String guidPattern = "(https?://)?(www.)?([a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9]\\.)+[\\w]{2,}";
+
+        return Pattern.matches(guidPattern, string);
     }
 
     public boolean isStrongPassword() {
-        return true;
+        String guidPattern = "(?=.{8,})((\\w*[0-9]\\w*[a-z]\\w*[A-Z]\\w*)|(\\w*[0-9]\\w*[A-Z]\\w*[a-z]\\w*)" +
+                "|(\\w*[a-z]\\w*[0-9]\\w*[A-Z]\\w*)|(\\w*[a-z]\\w*[A-Z]\\w*[0-9]\\w*)" +
+                "|(\\w*[A-Z]\\w*[a-z]\\w*[0-9]\\w*)|(\\w*[A-Z]\\w*[0-9]\\w*[a-z]\\w*))";
+
+        return Pattern.matches(guidPattern, string);
     }
 
 

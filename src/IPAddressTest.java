@@ -19,7 +19,7 @@ class IPAddressTest {
 
     @Test
     void isIP3() {
-        StringChecking ip = new StringChecking("255.255.255.255");
+        StringChecking ip = new StringChecking("1.255.255.255");
         Assertions.assertTrue(ip.isIP());
     }
 
