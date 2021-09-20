@@ -24,7 +24,7 @@ public class StringChecking {
     }
 
     public boolean isURL() {
-        String guidPattern = "(https?://)?(www.)?([a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9]\\.)+[\\w]{2,}";
+        String guidPattern = "(https?://)?(www\\.)?([a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9]\\.)+[a-z]{2,6}(/[.\\w-#]+)*/?";
 
         return Pattern.matches(guidPattern, string);
     }
