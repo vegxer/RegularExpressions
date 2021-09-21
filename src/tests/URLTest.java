@@ -148,4 +148,46 @@ class URLTest {
         Assertions.assertFalse(url.isURL());
     }
 
+    @Test
+    void isURL24() {
+        StringChecking url = new StringChecking("vk.2om/file/");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL25() {
+        StringChecking url = new StringChecking("vk.com/fi\\le/");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL26() {
+        StringChecking url = new StringChecking("vk.com/fi\"le/");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL27() {
+        StringChecking url = new StringChecking("v_k.com/file/");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL28() {
+        StringChecking url = new StringChecking("vk.com/file//");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL29() {
+        StringChecking url = new StringChecking("/vk.com");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL30() {
+        StringChecking url = new StringChecking("v@k.com/");
+        Assertions.assertFalse(url.isURL());
+    }
+
 }
