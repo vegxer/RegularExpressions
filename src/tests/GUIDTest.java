@@ -14,7 +14,7 @@ class GUIDTest {
 
     @Test
     void isGUID2() {
-        StringChecking guid = new StringChecking("ffffffff-ffff-ffff-ffff-ffffffffffff");
+        StringChecking guid = new StringChecking("{ffffffff-ffff-ffff-ffff-ffffffffffff}");
         Assertions.assertTrue(guid.isGUID());
     }
 
@@ -26,7 +26,7 @@ class GUIDTest {
 
     @Test
     void isGUID4() {
-        StringChecking guid = new StringChecking("11111111-1111-1111-1111-111111111111");
+        StringChecking guid = new StringChecking("{11111111-1111-1111-1111-111111111111}");
         Assertions.assertTrue(guid.isGUID());
     }
 
@@ -111,6 +111,18 @@ class GUIDTest {
     @Test
     void isGUID18() {
         StringChecking guid = new StringChecking("e02fd0e400f-090A-ca30-0d00a0038ba0");
+        Assertions.assertFalse(guid.isGUID());
+    }
+
+    @Test
+    void isGUID19() {
+        StringChecking guid = new StringChecking("{(}aA12bB34-5cC5-6dD7-8eE9-0fFabC568fDc");
+        Assertions.assertFalse(guid.isGUID());
+    }
+
+    @Test
+    void isGUID20() {
+        StringChecking guid = new StringChecking("aA12bB34-5cC5-6dD7-8eE9-0fFabC568fDc}");
         Assertions.assertFalse(guid.isGUID());
     }
 }
