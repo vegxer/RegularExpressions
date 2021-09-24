@@ -26,7 +26,8 @@ public class StringChecking {
 
     public boolean isURL() {
         String urlPattern = "^(https?://)?(www\\.)?([a-zA-Z][-a-zA-Z0-9]*[a-zA-Z]\\.)+[a-zA-Z]{2,}" +
-                "(:[0-9]{1,5})?(/[\\w-.~:?#\\[\\]@!$&'()*+,;%=]+)*/?$";
+                "(:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9][0-9]|6[0-4][0-9][0-9][0-9]|[1-5][0-9]?[0-9]?[0-9]?[0-9]?))?" +
+                "(/[\\w-.~:?#\\[\\]@!$&'()*+,;%=]+)*/?$";
 
         return Pattern.matches(urlPattern, string);
     }
