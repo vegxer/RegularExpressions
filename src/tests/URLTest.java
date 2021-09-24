@@ -97,96 +97,138 @@ class URLTest {
 
     @Test
     void isURL15() {
+        StringChecking url = new StringChecking("vk.com:65535");
+        Assertions.assertTrue(url.isURL());
+    }
+
+    @Test
+    void isURL16() {
+        StringChecking url = new StringChecking("vk.com:1/");
+        Assertions.assertTrue(url.isURL());
+    }
+
+    @Test
+    void isURL17() {
+        StringChecking url = new StringChecking("vk.com:19");
+        Assertions.assertTrue(url.isURL());
+    }
+
+    @Test
+    void isURL18() {
         StringChecking url = new StringChecking("v.com");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL16() {
+    void isURL19() {
         StringChecking url = new StringChecking("vk.c");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL17() {
+    void isURL20() {
         StringChecking url = new StringChecking("-vk.com");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL18() {
+    void isURL21() {
         StringChecking url = new StringChecking("vk-.com");
         Assertions.assertFalse(url.isURL());
     }
     @Test
-    void isURL19() {
+    void isURL22() {
         StringChecking url = new StringChecking("vk..com");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL20() {
+    void isURL23() {
         StringChecking url = new StringChecking(".vk.com");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL21() {
+    void isURL24() {
         StringChecking url = new StringChecking("v k.com");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL22() {
+    void isURL25() {
         StringChecking url = new StringChecking("https:vk.com");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL23() {
+    void isURL26() {
         StringChecking url = new StringChecking("vk.com//file/");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL24() {
+    void isURL27() {
         StringChecking url = new StringChecking("vk.2om/file/");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL25() {
+    void isURL28() {
         StringChecking url = new StringChecking("vk.com/fi\\le/");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL26() {
+    void isURL29() {
         StringChecking url = new StringChecking("vk.com/fi\"le/");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL27() {
+    void isURL30() {
         StringChecking url = new StringChecking("v_k.com/file/");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL28() {
+    void isURL31() {
         StringChecking url = new StringChecking("vk.com/file//");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL29() {
+    void isURL32() {
         StringChecking url = new StringChecking("/vk.com");
         Assertions.assertFalse(url.isURL());
     }
 
     @Test
-    void isURL30() {
+    void isURL33() {
         StringChecking url = new StringChecking("v@k.com/");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL34() {
+        StringChecking url = new StringChecking("vk.com:0");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL35() {
+        StringChecking url = new StringChecking("vk.com:65536");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL36() {
+        StringChecking url = new StringChecking("vk.com:100000");
+        Assertions.assertFalse(url.isURL());
+    }
+
+    @Test
+    void isURL37() {
+        StringChecking url = new StringChecking("vk.com:022");
         Assertions.assertFalse(url.isURL());
     }
 
